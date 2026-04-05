@@ -2,9 +2,9 @@ name: Lint
 
 on:
   push:
-    branches: [ development, staging, main,]
+    branches: [development, staging, main]
   pull_request:
-    branches: [ development, staging, main,]
+    branches: [development, staging, main]
     
 jobs:
   lint:
@@ -20,7 +20,7 @@ jobs:
           python-version: '3.x'
 
       - name: Install linters
-        run: |
+        run:
           pip install yamllint
           npm install -g markdownlint-cli
 

@@ -11,5 +11,5 @@ updates:
       - "dependencies"
       - "github-actions"
     commit-message:
-      prefix: "ci: "
+      prefix: "ci:"
       include: "scope"
