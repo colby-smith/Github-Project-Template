@@ -1,0 +1,14 @@
+# Documentation
+This folder is to store project documentation such as architecture notes, design decisions, or other references.
+
+**Useful tools:**
+- [grammarly.com](https://www.grammarly.com/) - Improve writing clarity and correctness.
+- [markdownguide.org](https://www.markdownguide.org/cheat-sheet/) - Cheat sheet reference for Markdown syntax and formatting.
+- [w3schools.com](https://www.w3schools.com/html/html5_syntax.asp/) - HTML formatting & style guide.
+
+<br>
+
+> **Note:** This file and attached folder is included as a placeholder.  
+> Replace or remove as needed.
+
+
