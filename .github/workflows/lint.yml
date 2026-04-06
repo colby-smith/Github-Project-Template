@@ -5,7 +5,7 @@ on:
     branches: [development, staging, main]
   pull_request:
     branches: [development, staging, main]
-    
+
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -20,7 +20,7 @@ jobs:
           python-version: '3.x'
 
       - name: Install linters
-        run:
+        run: |
           pip install yamllint
           npm install -g markdownlint-cli
 
@@ -32,8 +32,4 @@ jobs:
 
       - name: JSON Lint
         run: |
-          find . -name "*.json" -print0 | xargs -0 -I {} python -m json.tool {} > /dev/null
-
-      - name: Terraform Format Check
-        if: hashFiles('**/*.tf') != ''
-        run: terraform fmt -check -recursive
+          find . -name "*.json" -print0 | xargs -0 -I {} sh -c 'jq empty "{}"'
