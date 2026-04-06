@@ -7,7 +7,9 @@ This repository includes several automated workflows located in `.github/workflo
 Before using this template, complete the following one‑time steps in the GitHub UI.
 
 ### 1. Enable the following Dependabot features:
+
 *Settings -> Advanced Security -> Dependabot*
+
 - `Dependabot alerts`
 - `Dependabot security updates`
 - `Grouped security updates`
@@ -16,45 +18,98 @@ Before using this template, complete the following one‑time steps in the GitHu
 
 
 ### 2. Enable the following Code scanning features:
+
 *Settings -> Advanced Security -> Code scanning -> Tools*
+
 - `CodeQL analysis (default)`
 - `Copilot Autofix`
 
 ### 3. Create the required workflow labels
+
 *Issues -> Rules -> New label -> Create label*
+
 - `dependencies` - `#1f883d` - *Used for automated or manual updates to project dependencies.*
 - `github-actions` - `#000000` - *Used for changes related to GitHub Actions workflows.*
 
 ### 4. Create the additional standard repository branches
+
 *Code -> Branch dropdown -> view all branches -> New branch*
+
 - `development`
 - `staging`
 
 ### 5. Import each JSON file into GitHub Rulesets:
+
 *Settings -> Rules -> New ruleset*
+
 - `dev‑branch.json`
 - `stage‑branch.json`
 - `main‑branch.json`
 
 ### 6. Configure Dependabot
+
 *.github\dependabot.yml*
+
+- configure `dependabot.yml` to contain the package ecosystem relevant to the project.
+
+```yaml
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    labels:
+      - "dependencies"
+      - "python"
+    commit-message:
+      prefix: "deps:"
+      include: "scope"
+```
+
+- [Configuration documentation](https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/secure-your-dependencies/configuring-dependabot-version-updates)
+
+### 7. Configure Security workflow
+
+*.github\workflows\security.yml*
+- configure `security.yml` to contain CodeQL analysis for languages relevant to the project.
+
+```yaml
+codeql:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v3
+      with:
+        languages: python
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v3
+```
+
 - [Configuration documentation](https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/secure-your-dependencies/configuring-dependabot-version-updates)
 
 ## Workflows
 
 ### 1. `lint.yml`
+
 Runs on all branches. This workflow performs general repository linting: YAML linting, markdown linting, and basic formatting checks. Its purpose is to ensure consistent structure and formatting across all repos created from this template.
 
 ### 2. `security.yml`
+
 Runs on all branches. This workflow performs static analysis using GitHub CodeQL. It helps identify potential security issues early in development.
 
 ### 3. `terraform.yml`
+
 Runs where Terraform is used. This workflow runs terraform fmt, terraform init -backend=false, and terraform validate to ensure the Terraform code is syntax error-free and properly formatted before merging.
 
 ### 4. `dependabot.yml`
-Dependabot is configured to check for GitHub Actions updates once per month. It will open PRs only when updates exist using a consistent commit message prefix: ci:. However, it still requires configuration for the project‑specific dependencies.
+
+Dependabot is configured to check for GitHub Actions updates once per month. It will open PRs only when updates exist using a consistent commit message prefix: ci:.
 
 ## Pull Request Template
+
 Located at `.github/PULL_REQUEST_TEMPLATE.md`. This template provides a consistent structure for all pull requests created from this repository template.
 
 ## Additional Testing (not included)
