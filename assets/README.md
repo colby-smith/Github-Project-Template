@@ -1,6 +1,6 @@
 # Assets
 
-This folder is to store project assets such as images, diagrams, architecture drawings, or other static files.
+This folder is for storing project assets, such as images, diagrams, architectural drawings, and other static files.
 
 **Useful tools:**
 
@@ -8,5 +8,5 @@ This folder is to store project assets such as images, diagrams, architecture dr
 - [shields.io](https://shields.io/) - Create markdown/HTML icons and badges for README.md files.
 - [unicode.org](https://www.unicode.org/emoji/charts/full-emoji-list.html) - Full Unicode emoji cheat sheet.
 
-> **Note:** This file and attached folder is included as a placeholder.  
+> **Note:** This file and the attached folder are included as a placeholder.  
 > Replace or remove as needed.

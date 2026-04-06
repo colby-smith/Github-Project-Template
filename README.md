@@ -20,15 +20,15 @@ If applicable add instructions for setting up the project locally.
 
 ## 📦 Usage
 
-If applicable add how to run, build, or interact with the project.
+If applicable, add instructions for running, building, or interacting with the project.
 
 ## 🏗️ Infrastructure
 
-If applicable add details here if the project uses infrastructure-as-code.
+If applicable, add details here if the project uses infrastructure-as-code.
 
 ## 🧪 Testing
 
-If applicable add details here if the project includes tests or CI workflows.
+If applicable, add details here if the project includes tests or CI workflows.
 
 ## 📄 License
 

@@ -29,7 +29,7 @@ Before using this template, complete the following one‑time steps in the GitHu
 - `dependencies`
 - `github-actions`
 
-> **Note:** Further labels will need to be added depending the languages used in the project.
+> **Note:** Further labels will need to be added depending on the languages used in the project.
 
 ### 4. Create the additional standard repository branches
 
@@ -48,7 +48,7 @@ Before using this template, complete the following one‑time steps in the GitHu
 
 ## Initial Setup - Workflows
 
-**Configure the following workflows below relevant to the languages used in the project.**
+**Configure the workflows below using project-relevant languages.**
 
 ### 1. `lint.yml`
 
@@ -122,7 +122,7 @@ Located at `.github/PULL_REQUEST_TEMPLATE.md`. This template provides a consiste
 
 ## Additional Testing
 
-This template repository includes only generic workflows. Projects created from this template may require additional testing workflows depending on the languages or frameworks used, such as: Unit tests, integration tests, vetting, type checking, module verification, policy checks, static analysis, and UI tests.
+This template repository includes only generic workflows. Projects created from this template may require additional testing workflows depending on the languages or frameworks used, such as Unit tests, integration tests, vetting, type checking, module verification, policy checks, static analysis, and UI tests.
 
 ## Further Documentation
 
