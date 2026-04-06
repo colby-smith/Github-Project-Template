@@ -1,6 +1,9 @@
 ---
 name: Terraform
 
+permissions:
+  contents: read
+
 on:
   push:
     branches: [development, staging, main]

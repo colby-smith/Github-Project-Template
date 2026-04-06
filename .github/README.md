@@ -13,6 +13,8 @@ Before using this template, complete the following one‑time steps in the GitHu
 - `Grouped security updates`
 - `Dependabot version updates`
 
+
+
 ### 2. Enable the following Code scanning features:
 *Settings -> Advanced Security -> Code scanning -> Tools*
 - `CodeQL analysis (default)`
@@ -34,6 +36,10 @@ Before using this template, complete the following one‑time steps in the GitHu
 - `stage‑branch.json`
 - `main‑branch.json`
 
+### 6. Configure Dependabot
+*.github\dependabot.yml*
+- [Configuration documentation](https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/secure-your-dependencies/configuring-dependabot-version-updates)
+
 ## Workflows
 
 ### 1. `lint.yml`
@@ -47,8 +53,6 @@ Runs where Terraform is used. This workflow runs terraform fmt, terraform init -
 
 ### 4. `dependabot.yml`
 Dependabot is configured to check for GitHub Actions updates once per month. It will open PRs only when updates exist using a consistent commit message prefix: ci:. However, it still requires configuration for the project‑specific dependencies.
-
-[Configuration documentation](https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/secure-your-dependencies/configuring-dependabot-version-updates)
 
 ## Pull Request Template
 Located at `.github/PULL_REQUEST_TEMPLATE.md`. This template provides a consistent structure for all pull requests created from this repository template.
