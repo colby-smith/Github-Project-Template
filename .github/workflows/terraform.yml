@@ -3,6 +3,7 @@ name: Terraform
 
 permissions:
   contents: read
+  security-events: write
 
 on:
   push:

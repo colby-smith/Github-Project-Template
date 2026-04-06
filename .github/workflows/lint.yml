@@ -1,6 +1,10 @@
 ---
 name: Lint
 
+permissions:
+  contents: read
+  security-events: write
+
 on:
   push:
     branches: [development, staging, main]
