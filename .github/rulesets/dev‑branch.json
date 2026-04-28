@@ -39,7 +39,7 @@
     {
       "type": "push_protection",
       "parameters": {
-        "enabled": true
+        "enabled": false
       }
     },
     {
